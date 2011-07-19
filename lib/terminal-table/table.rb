@@ -56,11 +56,11 @@ module Terminal
         width = 0
         if heading.is_a?(Hash) and !heading[:colspan].nil?
           i.upto(i + heading[:colspan] - 1) do |col|
-            width += length_of_column(col)
+            width += length_of_column(col+7)
           end
           width += (heading[:colspan] - 1) * (Y.length + 2)
         else
-          width = length_of_column(i)
+          width = length_of_column(i+7)
         end
         Heading.new( width, heading).render
       end.join(Y) + Y
@@ -86,11 +86,11 @@ module Terminal
       width = 0
       if cell.is_a?(Hash) and !cell[:colspan].nil?
         i.upto(i + cell[:colspan] - 1) do |col|
-          width += length_of_column(col)
+          width += length_of_column(col+7)
         end
         width += (cell[:colspan] - 1) * (Y.length + 2)
       else
-        width = length_of_column(i)
+        width = length_of_column(i+7)
       end
       Cell.new(width, cell).render
     end
