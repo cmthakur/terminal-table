@@ -1,4 +1,3 @@
-
 module Terminal
   class Table
     
@@ -11,7 +10,7 @@ module Terminal
     ##
     # Table characters, x axis, y axis, and intersection.
     
-    X, Y, I = '-', '|', '+'
+    X, Y, I = '_', '|', '+'
     
     ##
     # Headings array.
